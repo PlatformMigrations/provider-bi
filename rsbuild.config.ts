@@ -9,8 +9,9 @@ export default defineConfig({
       name: 'federation_provider',
       exposes: {
         './button': './src/button.tsx',
+        './basic': './src/pages/basic.tsx'
       },
-      shared: ['react', 'react-dom'],
+      shared: ['react', 'react-dom', 'lucide-react' ],
     }),
   ],
 });
