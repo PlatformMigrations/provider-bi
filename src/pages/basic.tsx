@@ -1,4 +1,4 @@
-import { DataTableDemo } from "../components/table/intex";
+import DataTableDemo from "../components/table/intex";
 
 export default function Basic(){
     return(

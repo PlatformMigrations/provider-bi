@@ -11,7 +11,10 @@ export default defineConfig({
         './button': './src/button.tsx',
         './basic': './src/pages/basic.tsx'
       },
-      shared: ['react', 'react-dom', 'lucide-react' ],
+      shared: {
+        react: { singleton: true, eager: true, requiredVersion: "^18.0.0" },
+        "react-dom": { singleton: true, eager: true, requiredVersion: "^18.0.0" },
+      }
     }),
   ],
 });
