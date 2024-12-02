@@ -1,8 +1,13 @@
 import { LineChartComponent } from "@/components/chart-line";
 import { InteractiveChart } from "../components/chart-interactive/index";
 import { BarChartComponent } from "@/components/chart-bar";
+
+import React from "react";
 import 'tailwindcss/tailwind.css';
 
+const RemoteSelectScrollable = React.lazy(() =>
+    import('federation_consumer/ComboboxCampaing')
+  );
 
 export default function Basic() {
     const kpiData = [
@@ -34,8 +39,11 @@ export default function Basic() {
 
     return (
         <div className="grid grid-cols-3 gap-2 gap-y-11 grid-rows-[auto] p-2">
-            <div className="col-span-2 row-span-1">
+            <div className="col-span-3 row-span-1 flex justify-between items-center">
                 <h2 className="text-4xl">Short term view</h2>
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <RemoteSelectScrollable />
+                </React.Suspense>
             </div>
 
             {kpiData.map((kpi) => (
