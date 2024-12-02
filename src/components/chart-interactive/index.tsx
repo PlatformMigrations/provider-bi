@@ -129,7 +129,8 @@ const chartConfig = {
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig
-export function Component() {
+
+export function InteractiveChart() {
   const [timeRange, setTimeRange] = React.useState("90d")
   const filteredData = chartData.filter((item) => {
     const date = new Date(item.date)

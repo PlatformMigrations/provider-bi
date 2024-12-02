@@ -1,5 +1,4 @@
 import {
-    CartesianGrid,
     Line,
     LineChart,
     XAxis,
@@ -12,7 +11,6 @@ import {
     CardDescription,
     CardFooter,
     CardHeader,
-    CardTitle,
 } from "@/components/ui/card";
 import {
     ChartConfig,
@@ -23,8 +21,9 @@ import {
 
 const chartData = [
     { month: "min. 0", desktop: 0, mobile: 0 },
+    { month: "min. 0", desktop: 0, mobile: 0 },
     { month: "Spot", desktop: 5, mobile: 130 },
-    { month: "min. 10", desktop: 0, mobile: 140 },
+    { month: "min. 10", desktop: 0, mobile: 140 }
 ];
 
 const chartConfig = {
@@ -38,7 +37,7 @@ const chartConfig = {
     },
 } satisfies ChartConfig;
 
-export function ChartLine() {
+export function LineChartComponent() {
     return (
         <ResponsiveContainer>
             <Card className="">
@@ -53,7 +52,7 @@ export function ChartLine() {
                                     top: 10,
                                     right: 20,
                                     left: 20,
-                                    bottom: 10,
+                                    bottom: 10
                                 }}
                             >
                                 <XAxis
@@ -71,10 +70,10 @@ export function ChartLine() {
                                 <Line
                                     dataKey="desktop"
                                     type="natural"
-                                    stroke="var(--color-desktop)"
+                                    stroke="#000000"
                                     strokeWidth={2}
                                     dot={{
-                                        fill: "var(--color-desktop)",
+                                        fill: "#000000",
                                     }}
                                     activeDot={{
                                         r: 6,
